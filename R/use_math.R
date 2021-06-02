@@ -814,7 +814,7 @@ use_math <- function() {
     invisible(out)
   }
 
-  attachNamespace("tools")
+  if (!isNamespaceLoaded("tools")) attachNamespace("tools")
 
   # black magic inspired by mvbutils
 
