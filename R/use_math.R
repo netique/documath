@@ -398,7 +398,7 @@ use_math <- function() {
         `\\enc` = writeContent(block[[1L]], tag),
         `\\eqn` = {
           enterPara(doParas)
-          if (nzchar(mathjax)) {
+          if (TRUE) {
             of1("\\(")
             inEqn <<- TRUE
             block <- block[[1L]]
@@ -417,7 +417,7 @@ use_math <- function() {
         `\\deqn` = {
           inEqn <<- TRUE
           leavePara(TRUE)
-          if (nzchar(mathjax)) {
+          if (TRUE) {
             of1("\\[")
             block <- block[[1L]]
             of1(unlist(block))
@@ -814,6 +814,7 @@ use_math <- function() {
     invisible(out)
   }
 
+  attachNamespace("tools")
 
   # black magic inspired by mvbutils
 
