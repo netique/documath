@@ -1,7 +1,7 @@
 Type: Package
 Package: documath
 Title: Render Math in HTML R Documentation
-Version: 0.0.1
+Version: 0.0.2
 Author: Jan Netik
 Maintainer: Jan Netik <netikja@gmail.com>
 Description: Inject custom Rd2HTML function to enable rendering \eqn{} and

@@ -770,8 +770,21 @@ use_math <- function() {
       )
       of0(
         "<link rel=\"stylesheet\" type=\"text/css\" href=\"",
-        urlify(stylesheet), "\" />\n", "</head><body><div class=\"container\">\n",
-        "<script src=\"https://polyfill.io/v3/polyfill.min.js?features=es6\"></script><script id=\"MathJax-script\" async src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js\"></script>",
+        urlify(stylesheet), "\" />\n", "</head><body>
+        <div class=\"container\">\n",
+        "<script src=\"https://polyfill.io/v3/polyfill.min.js?features=es6\"></script>",
+
+        #  KaTeX
+        "<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css\" integrity=\"sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB\" crossorigin=\"anonymous\">
+
+          <!-- The loading of KaTeX is deferred to speed up page rendering -->
+          <script defer src=\"https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js\" integrity=\"sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p\" crossorigin=\"anonymous\"></script>
+
+          <!-- To automatically render math in text elements, include the auto-render extension: -->
+          <script defer src=\"https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js\" integrity=\"sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR\" crossorigin=\"anonymous\"
+        onload=\"renderMathInElement(document.body);\"></script>
+        ",
+
         "\n", "<table width=\"100%\" summary=\"page for ",
         htmlify(name)
       )
